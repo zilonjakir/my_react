@@ -43,6 +43,8 @@ class  Controller extends Component{
             pause : true,
             lap : true
         })
+
+        this.props.start()
     }
 
     getController(){

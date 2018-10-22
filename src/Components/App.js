@@ -4,6 +4,8 @@ import './App.css';
 import Title from './Title/Title';
 import CountDown from './CountDown/CountDown'
 
+import Controller from './Controller/Controller'
+
 class App extends Component {
 
   constructor (props){
@@ -24,6 +26,7 @@ class App extends Component {
           <h1 className="display-3">Twinkle Cats </h1>
           <Title/>
           <CountDown time={this.state.time}/>
+          <Controller/>
         </div>
       </div>
     );

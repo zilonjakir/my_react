@@ -20,10 +20,12 @@ class  Controller extends Component{
             lap : false,
             reset:true
         })
+
+        this.props.pause()
     }
 
     lapHandler(){
-
+        this.props.lap()
     }
 
     resetHandler(){
@@ -34,6 +36,8 @@ class  Controller extends Component{
             lap : false,
             reset : false
         })
+
+        this.props.reset()
     }
 
     startHandler(){

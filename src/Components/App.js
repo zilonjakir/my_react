@@ -15,13 +15,14 @@ class App extends Component {
           min:0,
           sec:0,
           mili:0
-        }
+        },
+        laps: []
       }
   }
 
 
   getStart(){
-    setInterval(()=>{
+    this.intervelID = setInterval(()=>{
       let min = this.state.time.min
       let sec = this.state.time.sec
       let mili = this.state.time.mili
@@ -48,6 +49,31 @@ class App extends Component {
   }
 
 
+  getPauseID(){
+    clearInterval(this.intervelID)
+  }
+
+
+  getReset(){
+    this.setState({
+      time:{
+        min:0,
+        sec:0,
+        mili:0
+      }
+    })
+  }
+
+  getLap(){
+    let time = {
+      ...this.state.time
+    }
+    this.setState({
+      ...this.state,
+      laps: [time, ...this.state.laps]
+    })
+    console.log(this.state.laps)
+  }
 
   render() {
     return (
@@ -56,7 +82,11 @@ class App extends Component {
           <h1 className="display-3">Twinkle Cats </h1>
           <Title/>
           <CountDown time={this.state.time}/>
-          <Controller start = {this.getStart.bind(this)}/>
+          <Controller 
+            start = {this.getStart.bind(this)}
+            pause = {this.getPauseID.bind(this)}
+            reset = {this.getReset.bind(this)}
+            lap = {this.getLap.bind(this)} />
         </div>
       </div>
     );

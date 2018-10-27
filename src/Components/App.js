@@ -6,6 +6,8 @@ import CountDown from './CountDown/CountDown'
 
 import Controller from './Controller/Controller'
 
+import Laps from './laps/laps'
+
 class App extends Component {
 
   constructor (props){
@@ -60,7 +62,8 @@ class App extends Component {
         min:0,
         sec:0,
         mili:0
-      }
+      },
+      laps: []
     })
   }
 
@@ -87,6 +90,7 @@ class App extends Component {
             pause = {this.getPauseID.bind(this)}
             reset = {this.getReset.bind(this)}
             lap = {this.getLap.bind(this)} />
+            <Laps className="my-5" laps={this.state.laps}/>
         </div>
       </div>
     );

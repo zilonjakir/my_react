@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Watch from './Pages/Watch';
+import User from './Pages/User';
 
 
 
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/about" component={About}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/watch" component={Watch}/>
+            <Route path="/user" component={User}/>
           </Switch>         
         </div>
       </div>

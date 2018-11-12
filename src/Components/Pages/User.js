@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 class User extends Component {
 
@@ -34,12 +35,61 @@ class User extends Component {
       }
       else
       {
-        return (<h1> 
-              {
-                this.state.userId.map((x, i) => 
-                  <li key={i}>{x.id}</li>)
-              }
-            </h1>);
+        const columns = [
+          {
+            Header:"Name",
+            accessor:"name",
+            style:{
+              textAlign:"left"
+            }
+          },{
+            Header:"Email",
+            accessor:"email"
+          },{
+            Header:"Mobile",
+            accessor:"mobile"
+          },{
+            Header:"User Name",
+            accessor:"username",
+            sortable:false,
+            filterable:false,
+            width:100,
+            maxWidth:100,
+            minWidth:100
+          },
+          {
+            Header:"Action",
+            Cell:props=>{
+              return(
+                <div>
+                  <button className="btn btn-success">Add</button>
+                  <span> </span>
+                  <button className="btn btn-danger">Delete</button>
+                </div>
+              )
+            },
+            sortable:false,
+            filterable:false,
+          }
+        ]
+        return (
+          <ReactTable
+            columns={columns}
+            data={this.state.userId}
+            filterable
+            defaultPageSize={50}
+            // showPaginationTop
+            noDataText={"Please Wait"}
+          >
+
+          </ReactTable>
+        )
+        // return (<h1> 
+        //       {
+        //         this.state.userId.map((x, i) => 
+        //           <li key={i}>{x.id}</li>)
+        //       }
+        //     </h1>);
       }
     }
   }

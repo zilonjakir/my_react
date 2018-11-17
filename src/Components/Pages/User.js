@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
+import { Link } from "react-router-dom";
+
 class User extends Component {
 
   constructor (props){
@@ -62,7 +64,7 @@ class User extends Component {
             Cell:props=>{
               return(
                 <div>
-                  <button className="btn btn-success">Add</button>
+                  <button className="btn btn-success">Edit</button>
                   <span> </span>
                   <button className="btn btn-danger">Delete</button>
                 </div>
@@ -73,16 +75,21 @@ class User extends Component {
           }
         ]
         return (
-          <ReactTable
-            columns={columns}
-            data={this.state.userId}
-            filterable
-            defaultPageSize={50}
-            // showPaginationTop
-            noDataText={"Please Wait"}
-          >
+          <div>
+            <div className="text-right">
+              <Link className="btn btn-primary" to="/add-new-user">Add</Link>
+            </div>
+            <ReactTable
+              columns={columns}
+              data={this.state.userId}
+              filterable
+              defaultPageSize={50}
+              // showPaginationTop
+              noDataText={"Please Wait"}
+            >
 
-          </ReactTable>
+            </ReactTable>
+          </div>
         )
         // return (<h1> 
         //       {

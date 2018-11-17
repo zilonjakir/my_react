@@ -9,6 +9,7 @@ const Navigation = () => {
             <NavLink className="menuBar" to="/contact">Contact</NavLink>
             <NavLink className="menuBar" to="/watch">Watch</NavLink>
             <NavLink className="menuBar" to="/user">Users</NavLink>
+            <NavLink className="menuBar" to="/modal">Modal</NavLink>
         </div>
     )
 }

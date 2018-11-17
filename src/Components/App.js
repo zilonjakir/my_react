@@ -8,6 +8,8 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Watch from './Pages/Watch';
 import User from './Pages/User';
+import CommonModal from './Pages/CommonModal';
+import addUser from './Pages/addUser';
 
 
 
@@ -26,6 +28,8 @@ class App extends Component {
             <Route path="/contact" component={Contact}/>
             <Route path="/watch" component={Watch}/>
             <Route path="/user" component={User}/>
+            <Route path="/modal" component={CommonModal}/>
+            <Route path="/add-new-user" component={addUser}/>
           </Switch>         
         </div>
       </div>
